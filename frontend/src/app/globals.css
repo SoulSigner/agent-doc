@@ -1,0 +1,80 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-swiss-neutral text-swiss-ink font-sans;
+  }
+
+  ::selection {
+    @apply bg-accent-blue text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-blue;
+    outline-style: solid;
+  }
+}
+
+@layer components {
+  .hairline {
+    border-width: 0.5px;
+  }
+
+  .accent-bar {
+    @apply w-1 rounded-full bg-accent-blue;
+  }
+
+  .card-surface {
+    @apply bg-white border border-swiss-border;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-swiss-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-swiss-muted;
+}
+
+/* Chat prose overrides */
+.prose-chat p {
+  @apply leading-relaxed;
+}
+.prose-chat p + p {
+  @apply mt-2;
+}
+.prose-chat code {
+  @apply bg-swiss-neutral px-1.5 py-0.5 rounded text-xs;
+}
+.prose-chat pre {
+  @apply bg-swiss-neutral p-3 rounded-lg text-xs overflow-x-auto;
+}
+.prose-chat ul,
+.prose-chat ol {
+  @apply pl-5;
+}
+.prose-chat li {
+  @apply my-1;
+}
